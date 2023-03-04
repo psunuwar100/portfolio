@@ -1,0 +1,77 @@
+@mixin hoverfocus {
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+
+@mixin boxshadow($x) {
+  -moz-box-shadow: $x;
+  -webkit-box-shadow: $x;
+  box-shadow: $x;
+}
+
+@mixin userSelectNone {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+@mixin transition($x) {
+  -webkit-transition: $x;
+  -moz-transition: $x;
+  -o-transition: $x;
+  -ms-transition: $x;
+  transition: $x;
+}
+
+@mixin transform($x) {
+  -webkit-transform: $x;
+  -moz-transform: $x;
+  -o-transition: $x;
+  -ms-transform: $x;
+  transform: $x;
+}
+
+@mixin breakpoint($point) {
+  $xs: "(min-width: 480px)";
+  $sm: "(min-width: 768px)";
+  $md: "(min-width: 992px)";
+  $lg: "(min-width: 1200px)";
+  $xl: "(min-width: 1300px)";
+  $xxl: "(min-width: 1600px)";
+  $xxxl: "(min-width: 1800px)";
+
+  // mobile first approach variables
+  @if $point==xs {
+    @media #{$xs} {
+      @content;
+    }
+  }
+
+  @if $point==sm {
+    @media #{$sm} {
+      @content;
+    }
+  } @else if $point==md {
+    @media #{$md} {
+      @content;
+    }
+  } @else if $point==lg {
+    @media #{$lg} {
+      @content;
+    }
+  } @else if $point==xl {
+    @media #{$xl} {
+      @content;
+    }
+  } @else if $point==xxl {
+    @media #{$xxl} {
+      @content;
+    }
+  } @else if $point==xxxl {
+    @media #{$xxxl} {
+      @content;
+    }
+  }
+}
