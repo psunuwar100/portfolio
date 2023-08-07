@@ -693,7 +693,7 @@ main {
 }
 
 .projects .project-image .project-image-div {
-  width: 100%;
+  width: 650px;
   overflow: hidden;
   position: relative;
 }
